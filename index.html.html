@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            color: white;
+        }
+        .gif-container {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Gatitos enamorados" width="300">
+    </div>
+    <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+    <div class="buttons">
+        <button class="yes" id="yes">Sí</button>
+        <button class="no" id="no">No</button>
+    </div>
+
+    <script>
+        let yesBtn = document.getElementById("yes");
+        let noBtn = document.getElementById("no");
+        let yesSize = 1.2;
+        let noSize = 1.2;
+        
+        noBtn.addEventListener("click", function() {
+            yesSize += 0.3;
+            noSize -= 0.2;
+            yesBtn.style.transform = `scale(${yesSize})`;
+            noBtn.style.transform = `scale(${noSize})`;
+            
+            if (noSize <= 0.3) {
+                noBtn.style.display = "none";
+            }
+        });
+
+        yesBtn.addEventListener("click", function() {
+            window.location.href = "http://127.0.0.1:5500/mensaje.html.html";
+        });
+    </script>
+</body>
+</html>
