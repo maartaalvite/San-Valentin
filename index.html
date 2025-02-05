@@ -53,12 +53,20 @@
         <button class="yes" id="yes">Sí</button>
         <button class="no" id="no">No</button>
     </div>
+    <audio id="musica" autoplay loop>
+        <source src="https://www.dropbox.com/scl/fi/zxa2j5cl3z0b1cx4qxnwz/Mia-and-Sebastian-Theme.mp3?rlkey=67z4kyq7mc3j94uqhjifexq1a&raw=1" type="audio/mp3">
+    </audio>
 
     <script>
         let yesBtn = document.getElementById("yes");
         let noBtn = document.getElementById("no");
         let yesSize = 1.2;
         let noSize = 1.2;
+        
+        document.addEventListener("click", function() {
+            document.getElementById("musica").play();
+        });
+
         
         noBtn.addEventListener("click", function() {
             yesSize += 0.3;
